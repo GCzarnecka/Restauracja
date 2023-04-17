@@ -1,0 +1,9 @@
+<div class="search">
+<!--  <button class = "btn btn-primary" (click)="clicked()">Click Me</button>-->
+  <npn-slider [min]="dishService.getMinPrice()" [max]="dishService.getMaxPrice()" (onChange)="onSliderChange($event)"></npn-slider>
+  <app-checkboxlist [type]="'cuisine'" [items]="cuisines"></app-checkboxlist>
+
+  <app-checkboxlist [type]="'category'" [items]="categories"></app-checkboxlist>
+  <app-checkboxlist [type]="'type'" [items]="types"></app-checkboxlist>
+</div>
+

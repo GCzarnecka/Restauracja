@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let user of users">
+    <button (click)="ban(user)">
+      <i class="bi-emoji-angry"></i>
+    </button>
+    {{user.username}}
+
+  </li>
+</ul>

@@ -1,0 +1,71 @@
+<div class="card">
+  <div class="add-dish-container">
+    <div class="add-dish">
+      <h2>{{editDish? "EDIT ":"ADD "}}DISH </h2>
+
+      <div>
+        <label for="dish-name"> name: </label>
+        <input id="dish-name" [(ngModel)]="dish.name" placeholder="name"/>
+      </div>
+
+      <div>
+        <label for="dish-type"> type: </label>
+        <select id="dish-type" [(ngModel)]="dish.type">
+          <option *ngFor="let type of TYPES" [value]="type">{{type}}</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="dish-cuisine"> cuisine: </label>
+        <select id="dish-cuisine" [(ngModel)]="dish.cuisine">
+          <option *ngFor="let type of CUISINES" [value]="type">{{type}}</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="dish-category"> category: </label>
+        <select id="dish-category" [(ngModel)]="dish.category">
+          <option *ngFor="let type of CATEGORIES" [value]="type">{{type}}</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="dish-description"> description: </label>
+        <textarea id="dish-description" [(ngModel)]="dish.description" placeholder="description"></textarea>
+      </div>
+
+      <div>
+        <label for="dish-price"> price: </label>
+        <input id="dish-price" [(ngModel)]="dish.price" placeholder="price"/>
+      </div>
+
+      <div>
+        <label for="dish-quantity"> quantity: </label>
+        <input id="dish-quantity" [(ngModel)]="dish.quantity" placeholder="quantity"/>
+      </div>
+
+      <div>
+        <label for="dish-ingredients"> ingredients: </label>
+        <input id="dish-ingredients" [(ngModel)]="ingredients" placeholder="ingredients"/>
+      </div>
+
+      <div>
+        <label for="dish-image1"> image1: </label>
+        <input id="dish-image1" [(ngModel)]="dish.images[0]" placeholder="image"/>
+      </div>
+
+      <div>
+        <label for="dish-image2"> image2: </label>
+        <input id="dish-image2" [(ngModel)]="dish.images[1]" placeholder="image"/>
+      </div>
+
+      <div>
+        <label for="dish-image3"> image3: </label>
+        <input id="dish-image3" [(ngModel)]="dish.images[2]" placeholder="image"/>
+      </div>
+
+
+      <button class = "btn btn-primary" (click)="addDish()">{{editDish? "EDIT":"ADD"}}</button>
+    </div>
+  </div>
+</div>

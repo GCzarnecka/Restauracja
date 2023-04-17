@@ -1,0 +1,13 @@
+app-nav-bar {
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ECEFF1;
+  z-index: 2;
+}
+.container {
+  margin-top: 50px;
+  /*position: relative;*/
+}

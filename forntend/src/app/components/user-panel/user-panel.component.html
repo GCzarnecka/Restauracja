@@ -1,0 +1,12 @@
+<div >
+  <div [hidden]="userService.getToken()" class="container">
+    <a routerLink="sign-in" >Login</a>
+    <a routerLink="sign-up">Sign Up</a>
+  </div>
+
+<div class="cnt" [hidden]="!userService.getToken()">
+  <div class ="container"><a routerLink="profile">Profile</a></div>
+  <button  class="btn btn-primary" (click)="userService.logout()">Logout</button>
+</div>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{review.title}}</h5>
+    <p>{{review.review}}</p>
+
+    <div class="d-flex justify-content-between">
+      <div class="d-flex flex-row align-items-center">
+
+        <p class="small mb-0 ms-2">{{review.nickname}}</p>
+      </div>
+      <div class="d-flex flex-row align-items-center">
+        <p class="small text-muted mb-0"><ngb-rating [readonly]="true" [rate]="review.rating"></ngb-rating></p>
+      </div>
+    </div>
+  </div>
+</div>

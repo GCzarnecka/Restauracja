@@ -1,0 +1,22 @@
+.container {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+justify-content: space-around;
+}
+
+
+.add {
+  /*margin: 0 auto;*/
+  /*width: 100%;*/
+  /*height: 100px;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+}
+
+/*.add a {*/
+/*  width: 500px;*/
+/*  height: 100px;*/
+/*}*/

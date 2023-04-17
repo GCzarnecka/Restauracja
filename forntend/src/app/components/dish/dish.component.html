@@ -1,0 +1,39 @@
+<div class = "card" [class.cheap]="dishService.ifDishCheapest(dish)"
+     [class.expensive]="dishService.ifDishExpensive(dish)">
+  <div class = "card-header">
+    <h3 class = "card-title">{{dish.name}}</h3>
+    <ngb-rating [readonly]="true" [rate]="dishService.getAvgRating(dish)"></ngb-rating>
+    <button class = "btn btn-primary" (click) = "delete(dish)" [hidden]="!canModerate">
+      <i class="bi bi-trash-fill"></i>
+    </button>
+
+    <a routerLink="/edit-dish/:{{dish._id}}" [hidden]="!canModerate"
+       class="btn btn-primary"><i class="bi bi-pencil-fill"></i></a>
+  </div>
+  <div class="img">
+    <a [class.disabled]="!isLogged" routerLink="/dish/:{{dish._id}}">
+    <img class="card-img-top" src="{{dish.images[0]}}" alt="Card image cap">
+    </a>
+  </div>
+  <div class = "card-body">
+    <p class = "card-text">{{dish.description}}</p>
+    <p class="ingredients">Ingredients: {{dish.ingredients}}</p>
+    <div class="container">
+      <div [hidden]="!canBuy" >
+    <button [class.hidden]="!(dish.quantity>0)" class = "btn bi-bag-plus" (click)="addToCart(dish)"><i class="bi bi-plus"></i></button>
+    <button [class.hidden]="!(cartService.getNumberOfDishes(dish)>0)" class = "btn bi-bag" (click)="removeFromCart(dish)"><i class="bi bi-dash"></i></button>
+      </div>
+    <h3>Quantity: {{dish.quantity}}</h3>
+     <h3> ${{dish.price}}</h3>
+
+    </div>
+
+  <div class = "card-footer">
+    <div class="container">
+      <div>{{dish.category}}</div>
+      <div>{{dish.cuisine}}</div>
+    </div>
+    </div>
+
+</div>
+</div>

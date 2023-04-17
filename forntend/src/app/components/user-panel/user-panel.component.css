@@ -1,0 +1,13 @@
+.cnt {
+  display: flex;
+}
+.container{
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+a{
+  padding-right: 10px;
+}

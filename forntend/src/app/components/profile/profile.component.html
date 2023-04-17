@@ -1,0 +1,16 @@
+<h1>Hello {{username}}</h1>
+<ul>
+  <li class="card" *ngFor="let x of history">
+      <div class="card-title" >{{getDate(x.date)}}</div>
+        <div *ngFor="let y of x.dishes">
+          <ul class="">
+            <li class ="nested">
+              <span>name: {{y.dish.name}}</span>
+              <span>quantity: {{y.quantity}}</span>
+              <span>total: {{x.total}}</span>
+            </li>
+          </ul>
+        </div>
+  </li>
+</ul>
+

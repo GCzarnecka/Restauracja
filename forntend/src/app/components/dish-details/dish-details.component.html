@@ -1,0 +1,60 @@
+<div class="">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">{{dish.name}}</h3>
+    </div>
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="dish.images[0]" alt="Random first slide" width="500px" height="300px"/>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="dish.images[1]" alt="Random second slide" width="500px" height="300px"/>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img [src]="dish.images[2]" alt="Random third slide" width="500px" height="300px"/>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+    <div class="card-body">
+      <p class="card-text">{{dish.description}}</p>
+    </div>
+    <div class="card-footer">
+      <div [hidden]="!canBuy" >
+        <button [class.hidden]="!(dish.quantity>0)" class = "btn bi-bag-plus" (click)="addToCart(dish)"><i class="bi bi-plus"></i></button>
+        <button [class.hidden]="!(cartService.getNumberOfDishes(dish)>0)" class = "btn bi-bag" (click)="removeFromCart(dish)"><i class="bi bi-dash"></i></button>
+      </div></div>
+
+  </div>
+
+  <div class="card" [hidden]="!ifBought">
+    <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+      <div class="d-flex flex-start w-100">
+        <div class="form-outline w-100">
+          <input type="text" class="form-control" placeholder="Title" [(ngModel)]="review.title">
+                  <textarea class="form-control" id="textAreaExample" rows="4"
+                            [(ngModel)]="review.review"
+                            style="background: #fff;"></textarea>
+        </div>
+      </div>
+      <div class="float-end mt-2 pt-1">
+        <ngb-rating [(ngModel)] = "review.rating "></ngb-rating>
+        <button type="button" class="btn btn-primary btn-sm" (click)="addReview()">Post comment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row d-flex justify-content-center">
+  <div class ="reviews" [hidden]="dish.reviews?.length===0">
+    <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+      <app-review *ngFor="let review of dish.reviews" [review]="review"></app-review>
+    </div>
+  </div>
+</div>
+

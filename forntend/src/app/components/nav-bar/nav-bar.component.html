@@ -1,0 +1,12 @@
+<!--<div class="navbar">-->
+<div class="nav">
+  <div><a routerLink="restaurant">Home</a></div>
+  <a routerLink="/add-dish" class="btn btn-primary" [hidden]="!canModerate">Add Dish</a>
+  <div class="cnt">
+    <app-cart-header></app-cart-header>
+    <button class="btn btn-primary" routerLink="admin-panel" [hidden]="!ifAdmin">adminPanel</button>
+    <app-user-panel></app-user-panel>
+  </div>
+
+</div>
+<!--</div>-->

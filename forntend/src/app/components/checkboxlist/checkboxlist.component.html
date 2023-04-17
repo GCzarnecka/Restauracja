@@ -1,0 +1,9 @@
+<div class="container">
+  <button (click)="show()" >Set {{type}}</button>
+  <div class="items"  [hidden]="showItems">
+    <div class = "item" *ngFor="let item of items" >
+      <input type="checkbox" id="{{item}}" name="{{item}}" value="0" (change)="selectItem(item)" />
+      <label for="{{item}}">{{item}}</label>
+    </div>
+  </div>
+</div>

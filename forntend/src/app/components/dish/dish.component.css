@@ -1,0 +1,83 @@
+.card{
+  max-width: 400px;
+  min-height: 200px;
+  display: flex;
+  /*margin: 0 auto;*/
+  margin-top: 20px;
+
+}
+.card-body{
+  /*min-height: 200px;*/
+  font-size: 0.8rem;
+}
+.card-header{
+  font-size: 1rem;
+  /*display: inline-flex;*/
+  justify-content: space-between;
+}
+
+.cart-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+*{
+  font-family: quicksand, serif;
+}
+.card-footer div{
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1rem;
+  font-family: quicksand, serif;
+}
+.card-text{
+  margin-top: 10px;
+  font-size: 0.9rem;
+  min-height: 150px;
+  /*width: 350px;*/
+  /*min-width: 400px;*/
+}
+
+.disabled{
+  pointer-events: none;
+}
+
+.hidden{
+  visibility: hidden;
+}
+.cheap{
+  border:1px solid red;
+}
+.expensive{
+  border:1px solid green;
+}
+.ingredients{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-family: quicksand, serif;
+}
+ngb-rating{
+  font-size: 1.5rem;
+}
+img{
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+.btn{
+  background-color: #7FDBFF;
+  border: none
+}
